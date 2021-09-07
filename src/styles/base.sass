@@ -1,0 +1,61 @@
+@use "sass:meta"
+
+$font-body-copy: 'MD IO 0.2', monospace // TODO: Set up webfonts
+$font-display: 'Digital-7 Mono', cursive
+$color-background: #CCD4CF
+$color-black-soft: #282B33
+$color-black: #22252D
+$color-white: #FEFEFE
+$color-red: #C87578
+$color-red-accent: #EC5252
+$color-teal: #3DE0C4
+
+:root
+  --color-background: #{meta.inspect($color-background)}
+  --color-black-soft: #{meta.inspect($color-black-soft)}
+  --color-black: #{meta.inspect($color-black)}
+  --color-white: #{meta.inspect($color-white)}
+  --color-red: #{meta.inspect($color-red)}
+  --color-red-accent: #{meta.inspect($color-red-accent)}
+  --color-teal: #{meta.inspect($color-teal)}
+
+  --font-body-copy: #{meta.inspect($font-body-copy)}
+  --font-display: #{meta.inspect($font-display)}
+  
+html
+  font-size: 62.5%
+  box-sizing: border-box
+
+body
+  font-size: 1.6rem
+  font-weight: 400
+  font-family: var(--font-body-copy)
+  line-height: 1.8
+  background-color: var(--color-background)
+  min-width: 360px
+  height: 100vh
+  min-height: 640px
+  display: flex
+  justify-content: center
+  align-items: center
+
+*,
+*::before,
+*::after
+  box-sizing: inherit
+
+*
+  margin: 0
+  padding: 0
+
+a
+  text-decoration: none
+
+li
+  list-style: none
+
+code
+  font-family: var(--font-body-copy)
+
+strong
+  font-weight: 700

@@ -1,0 +1,101 @@
+@use './reset'
+@use './base'
+
+@mixin flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+.app
+  max-width: 720px
+  @include flex-center
+  flex-direction: column
+  gap: 9.6rem
+
+.calculator
+  width: 100%
+  min-width: 320px
+  max-width: 560px
+  background-color: var(--color-black)
+  border-radius: 2.4rem
+  padding-block-start: 3.2rem
+  box-shadow: 0.8rem 0.8rem 16rem rgb(8 8 8 / 0.16)
+
+  &__branding
+    width: calc(100% - 4.8rem)
+    height: 4rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 0 auto 1.6rem auto
+
+    &__title
+      @include flex-center
+
+    &__subtitle
+      font-size: 1.5rem
+      letter-spacing: 1px
+      color: #44BB76
+  
+  &__display
+    background-color: #678F77
+    color: #1E442E
+    font-family: var(--font-display)
+    line-height: 1
+    text-align: right
+    width: calc( 100% - 4.8rem )
+    height: 12.8rem
+    border-radius: 0.8rem
+    margin: 0 auto 1.6rem auto
+    box-shadow: inset 0.2rem 0.4rem 0.8rem rgb(30 68 46 / 0.8)
+    padding: 0.8rem 1.2rem
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    &__indicators
+      font-size: 1.4rem
+    
+    &__input
+      font-size: 2rem
+      line-height: 1.2
+
+    &__output
+      font-size: 5.6rem
+  
+  &__keypad
+    background-color: #282B33
+    border-radius: 2.4rem
+    padding: 2.4rem
+
+    &__row
+      @include flex-center
+      gap: 1rem
+      
+      &:not(:last-of-type)
+        margin-block-end: 1rem
+
+    &__button
+      width: calc(100% / 5)
+      height: 6rem
+      border: none
+      border-radius: 1rem
+      background-color: var(--color-black)
+      color: var(--color-white)
+      font-family: var(--font-body-copy)
+      font-size: 2.4rem
+
+      &--memory
+        color: var(--color-red)
+
+      &--operator
+        color: var(--color-teal)
+      
+      &--operator--alt
+        font-size: 3.2rem
+
+      &--number
+        font-weight: 700
+
+      &--clear
+        background-color: var(--color-red-accent)
